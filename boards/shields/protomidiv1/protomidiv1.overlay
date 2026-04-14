@@ -1,4 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 #include "protomidiv1-layouts.dtsi"
 
@@ -42,29 +44,14 @@
         rows = <2>;
 
         map = <
-            RC(0, 0) RC(0, 1)
-            RC(1, 0) RC(1, 1)
+            0 1
+            2 3
         >;
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-                &kp A    &kp B
-                &kp C    &kp D
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DOWN>;
-        };
     };
 };
 
 &i2c0 {
     status = "okay";
-    sda-pin = <29>;
-    scl-pin = <31>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
