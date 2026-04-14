@@ -2,6 +2,13 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        inc_dec_vol: inc_dec_vol {
+            compatible = "zmk,behavior-inc-dec";
+            bindings = <C_VOL_UP>, <C_VOL_DOWN>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -11,7 +18,7 @@
                 &kp C    &kp D
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP, C_VOL_DOWN>;
+            sensor-bindings = <&inc_dec_vol>;
         };
     };
 };
