@@ -11,13 +11,7 @@
                 &kp C    &kp D
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DOWN>;
-        };
-
-        encoder_button_layer {
-            bindings = <
-                &kp C_MUTE
-            >;
+            sensor-bindings = <&inc_dec_kp &kp C_VOL_UP &kp C_VOL_DOWN>;
         };
     };
 };

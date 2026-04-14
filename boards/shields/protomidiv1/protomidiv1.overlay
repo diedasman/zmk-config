@@ -6,7 +6,6 @@
     chosen {
         zmk,physical-layout = &default_layout;
         zmk,kscan = &kscan0;
-        zmk,encoder = &encoder0;
     };
 
     kscan0: kscan {
