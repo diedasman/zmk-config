@@ -2,6 +2,13 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        enc_vol: enc_vol {
+            compatible = "zmk,behavior-sensor-rotate";
+            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DOWN>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -10,6 +17,8 @@
                 &kp A    &kp B
                 &kp C    &kp D
             >;
+
+            sensor-bindings = <&enc_vol>;
         };
     };
 };
